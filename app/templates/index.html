@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    {{ info }}
+    <div>
+        <a href="{% url 'create' %}">create</a>
+    </div>
+    {% for item in info %}
+    <div class="div">
+        <p>{{ item.task }}</p>
+        <p>{{ item.data }}</p>
+        <p>{{ item.status }}</p>
+    </div>
+    <div>
+        <a href="{% url 'detail' item.pk %}">detail</a>
+        <a href="{% url 'update_class' item.pk %}">update</a>
+                <a href="{% url 'delete_class' item.pk %}">delete</a>
+    </div>
+        {% endfor %}
+    <div>
+        {{ task }}
+    </div>
+</body>
+</html>

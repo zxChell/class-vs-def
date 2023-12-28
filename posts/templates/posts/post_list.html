@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+    <a href="{% url 'create' %}">Create</a>
+    {% for item in object_list %}
+    <div class="div">
+        <p>{{ item.title }}</p>
+        <p>{{ item.text }}</p>
+        <p>{{ item.date }}</p>
+    </div>
+    <div>
+
+    </div>
+    {% endfor %}
+</body>
+</html>
